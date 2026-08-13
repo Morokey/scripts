@@ -1,0 +1,46 @@
+local CoreGui = game:GetService("CoreGui")
+local TweenService = game:GetService("TweenService")
+local UserInputService = game:GetService("UserInputService")
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UIS = UserInputService
+
+local function Create(instance, parent, props)
+    local new = Instance.new(instance, parent)
+    if props then
+        for prop, value in pairs(props) do
+            pcall(function()
+                new[prop] = value
+            end)
+        end
+    end
+    return new
+end
+
+local ScreenGui = Create("ScreenGui", CoreGui, {
+    Name = "Morokeys1"
+})
+
+local ScreenFind = CoreGui:FindFirstChild(ScreenGui.Name)
+if ScreenFind and ScreenFind ~= ScreenGui then
+    ScreenFind:Destroy()
+end
+
+function DestroyScript()
+    ScreenGui:Destroy()
+end
+
+function MakeWindow(configs)
+    local Title = configs.Title or "Morokeys1"
+
+    local menu = Create('Frame', ScreenGui, {
+        Name = 'Menu',
+        Size = UDim2.new(0, 450, 0, 300),
+        Draggable = true, 
+        Active = true,
+        BackgroundColor3 = Color3.fromRGB(0, 0, 0),
+        BorderSizePixel = 0
+    })
+end
+
+MakeWindow(Title = 'abc')

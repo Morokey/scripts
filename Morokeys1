@@ -43,4 +43,4 @@ function MakeWindow(configs)
     })
 end
 
-MakeWindow(Title = 'abc')
+MakeWindow({Title = 'abc'})

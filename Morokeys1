@@ -64,6 +64,14 @@ function MakeWindow(configs)
         BorderSizePixel = 0
     })
 
+    local scrollframe = Create('ScrollingFrame', menu,{
+        BackgroundColor3 = Color3.fromRGB(0, 0, 0),
+        Size = UDim2.new(0, 100, 0, 274),
+        Position = UDim2.new(0, 0, 0, 25),
+        BorderSizePixel = 0,
+        ScrollBarThickness = 0
+    })
+
 end
 
-MakeWindow({Title = 'titel'})
+MakeWindow({Title = 'title'})
